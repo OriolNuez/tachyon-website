@@ -1,14 +1,9 @@
 /**
- * Public site settings. Fill these in only with real, public HTTPS addresses.
- * Leave a download blank until that installer is published and tested: the page then says "coming soon".
- * Never put passwords, keys or private information here.
+ * Public site settings. Only real, public HTTPS addresses; never passwords, keys or private information.
+ * The download links and install commands are written in index.html, pointing at the latest release of this repository.
  */
 window.TACHYON_SITE = {
-  repositoryUrl: "",
-  releasesUrl: "",
-  downloads: {
-    mac: "",
-    windows: ""
-  },
-  releaseLabel: ""
+  repositoryUrl: "https://github.com/OriolNuez/tachyon-website",
+  releasesUrl: "https://github.com/OriolNuez/tachyon-website/releases",
+  releaseLabel: "Version 0.1.0 · November 2026"
 };

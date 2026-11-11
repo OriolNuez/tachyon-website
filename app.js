@@ -23,27 +23,42 @@
   }
 
   // Links appear only once they point somewhere real.
-  const releases = site.releasesUrl || (https(site.repositoryUrl) ? site.repositoryUrl.replace(/\/$/, '') + '/releases' : '');
   if (https(site.repositoryUrl)) { const repo = $('#repo'); repo.href = site.repositoryUrl; repo.hidden = false; }
-  if (https(releases)) { const all = $('#releases'); all.href = releases; all.hidden = false; }
+  if (https(site.releasesUrl)) $('#releases').href = site.releasesUrl;
   if (site.releaseLabel) $('#release-status').textContent = site.releaseLabel;
 
-  const systems = { mac: 'macOS', windows: 'Windows' };
-  const download = $('#download'), help = $('#download-help');
-  function choose(key) {
-    document.querySelectorAll('[data-os]').forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.os === key)));
-    const href = (site.downloads || {})[key];
-    if (https(href)) {
-      download.href = href; download.removeAttribute('aria-disabled');
-      download.textContent = 'Download for ' + systems[key];
-      help.textContent = 'The download comes from the official release on GitHub.';
-    } else {
-      download.href = '#install'; download.setAttribute('aria-disabled', 'true');
-      download.textContent = 'Download coming soon';
-      help.textContent = 'No ' + systems[key] + ' download has been published yet.';
+  // Without script both systems' instructions show; with it, the tabs pick one (Windows visitors start on Windows).
+  const tabs = [...document.querySelectorAll('[data-os]')];
+  function choose(key, focus) {
+    for (const tab of tabs) {
+      const on = tab.dataset.os === key;
+      tab.setAttribute('aria-selected', String(on)); tab.tabIndex = on ? 0 : -1;
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = !on;
+      if (on && focus) tab.focus();
     }
   }
-  download.addEventListener('click', event => { if (download.getAttribute('aria-disabled') === 'true') event.preventDefault(); });
-  document.querySelectorAll('[data-os]').forEach(tab => tab.addEventListener('click', () => choose(tab.dataset.os)));
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => choose(tab.dataset.os));
+    tab.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      event.preventDefault();
+      choose(tabs[(i + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length].dataset.os, true);
+    });
+  });
   choose(/Win/.test(navigator.userAgent) ? 'windows' : 'mac');
+
+  // Copy buttons for the install lines. If the clipboard isn't available, the line is selected to copy by hand.
+  const status = $('#copy-status');
+  document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', async () => {
+    const code = document.getElementById(button.dataset.copy);
+    try {
+      await navigator.clipboard.writeText(code.textContent);
+      button.textContent = 'Copied'; status.textContent = 'Install line copied.';
+      setTimeout(() => { button.textContent = 'Copy'; }, 2000);
+    } catch {
+      const range = document.createRange(); range.selectNodeContents(code);
+      const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      status.textContent = 'Install line selected. Press Command C or Control C to copy it.';
+    }
+  }));
 })();
