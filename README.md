@@ -16,25 +16,29 @@ Open `index.html` in a browser, or run `python3 -m http.server 8000` from this f
 
 Official guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-## Connect downloads to GitHub Releases
+## Downloads and install commands
 
-Edit `config.js` after you have created and tested public release builds:
+The app is published as **releases of this repository**: <https://github.com/OriolNuez/tachyon-website/releases>. Each release carries six files, built in the app repository with `npm run release`:
 
-```js
-window.TACHYON_SITE = {
-  repositoryUrl: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO",
-  releasesUrl: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases",
-  downloads: {
-    mac: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-macOS.dmg",
-    windows: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-Windows-Setup.exe"
-  },
-  releaseLabel: "V1.0 AVAILABLE"
-};
+| File | Used by |
+|---|---|
+| `Tachy-on-Village-mac-arm64.zip` | Apple silicon Macs |
+| `Tachy-on-Village-mac-x64.zip` | Intel Macs |
+| `Tachy-on-Village-Setup-windows-x64.exe` | Windows |
+| `install.sh` / `install.ps1` | the one-line install commands |
+| `SHA256SUMS.txt` | checksums the install commands verify |
+
+`index.html` links to them through `https://github.com/OriolNuez/tachyon-website/releases/latest/download/<file>`, so a new release updates the site and the install commands without editing the page. Keep the file names the same in every release. If the version or the download sizes change, update `releaseLabel` in `config.js` and the sizes in `index.html`.
+
+The install commands shown on the page:
+
+```sh
+curl -fsSL https://github.com/OriolNuez/tachyon-website/releases/latest/download/install.sh | bash   # macOS Terminal
 ```
 
-**IMPORTANT:** The above filenames are illustrative ONLY. Use the exact filenames of *your* uploaded GitHub Release assets. Do not enable a button until the platform's installer has actually been published and verified. Until configured, the website clearly displays **Download coming soon**.
-
-GitHub documents `/releases/latest/download/asset-name` for release assets: https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases
+```powershell
+irm https://github.com/OriolNuez/tachyon-website/releases/latest/download/install.ps1 | iex          # Windows PowerShell
+```
 
 ## Branding / screenshots
 
@@ -48,8 +52,8 @@ GitHub documents `/releases/latest/download/asset-name` for release assets: http
 - [ ] Confirm product naming (`Tachyon` / `Tachy-on Village`) and final marketing copy.
 - [ ] Replace any screenshot with sensitive or unapproved information with a sanitised demo screenshot.
 - [ ] Confirm that advertised features and supported operating systems match the actual release.
-- [ ] Verify downloads on each supported platform and configure `config.js` with exact release URLs.
-- [ ] Add code-signing / security installation guidance appropriate to the actual binaries.
+- [x] Downloads published as release assets and linked with exact file names; install guidance for unsigned builds is on the page.
+- [ ] Test the Windows installer on a Windows computer.
 - [ ] Check mobile layout, keyboard navigation, reduced-motion settings, and external links.
 - [ ] Verify the live GitHub Pages URL and release downloads after deployment.
 
