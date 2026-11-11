@@ -26,8 +26,7 @@ window.TACHYON_SITE = {
   releasesUrl: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases",
   downloads: {
     mac: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-macOS.dmg",
-    windows: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-Windows-Setup.exe",
-    linux: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-Linux.AppImage"
+    windows: "https://github.com/YOUR-USERNAME/YOUR-APP-REPO/releases/latest/download/Tachyon-Windows-Setup.exe"
   },
   releaseLabel: "V1.0 AVAILABLE"
 };
@@ -39,9 +38,9 @@ GitHub documents `/releases/latest/download/asset-name` for release assets: http
 
 ## Branding / screenshots
 
-- `assets/orb.svg` is a custom vector interpretation of the Tachyon Wave Orb mascot, with a physics-inspired luminous wave.
-- `assets/screen-*.webp` are *concept previews*, not assertions of current production UI.
-- The site has parallax-style landscape layers, ambient twinkling particles, gentle floating orb animation, and reduced-motion support.
+- `assets/event-horizon.png` is the app's own pixel-art bar (480x270, scaled with crisp pixels), and `assets/tachyon.png` is Tachyon from the app's sprite.
+- `assets/step-*.webp` are real screenshots of the app taken by its automated tests, which use only invented data.
+- The only motion is Tachyon's opening line typing out, and it's skipped when reduced motion is on.
 - Screenshots should be reviewed carefully before publishing: screenshots or previews containing real company/customer/contact names should be replaced with **sanitised demo data**. Never publish real contact names, email addresses, phone numbers, client information, or campaign data without appropriate authorisation.
 
 ## Before launch checklist

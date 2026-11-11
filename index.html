@@ -1,70 +1,169 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#17182f" />
-  <meta name="description" content="Tachyon Village brings your sales cadences, contacts, outreach drafts and schedules together in one cozy local workspace." />
-  <meta property="og:title" content="Tachyon Village — Your work, in orbit" />
-  <meta property="og:description" content="A playful local workspace for serious outreach. Explore cadences, contacts, drafts, and your schedule." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tachyon Village</title>
+  <meta name="description" content="A desktop workspace for sales cadences: accounts, contacts, email drafts, next steps and calls in one place, with Tachyon telling you what’s happening." />
+  <meta property="og:title" content="Tachyon Village" />
+  <meta property="og:description" content="A desktop workspace for sales cadences, with a little pixel-art village around it." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/social-preview.svg" />
-  <link rel="icon" type="image/svg+xml" href="assets/orb.svg" />
+  <meta property="og:image" content="https://oriolnuez.github.io/tachyon-website/assets/social-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1f1830" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Tachyon Village — Your work, in orbit</title>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <canvas id="ambient" aria-hidden="true"></canvas>
-  <div class="sky-glow" aria-hidden="true"></div>
-  <div class="landscape landscape-back" aria-hidden="true"></div>
-  <div class="landscape landscape-front" aria-hidden="true"></div>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Tachyon Village home"><img src="assets/orb.svg" width="45" height="45" alt=""/><span><strong>TACHYON</strong><small>V I L L A G E</small></span></a>
-    <nav class="nav" id="site-nav" aria-label="Main navigation">
-      <a href="#features">Features</a><a href="#showcase">The workspace</a><a href="#how-it-works">How it works</a><a href="#install">Install</a>
+
+  <header class="hero">
+    <nav class="topbar" aria-label="Site">
+      <a class="wordmark" href="#main"><img src="assets/tachyon.png" alt="" width="28" height="28" />Tachyon Village</a>
+      <div class="topbar-links">
+        <a href="#cadence">How it works</a>
+        <a href="#install" class="topbar-get">Get the app</a>
+      </div>
     </nav>
-    <div class="header-actions"><a class="header-github" id="nav-repo" href="#install" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7A11.3 11.3 0 0 0 8.42 22.7c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.73 2.68 1.23 3.34.94.1-.73.4-1.23.72-1.5-2.51-.28-5.15-1.25-5.15-5.58 0-1.23.44-2.23 1.16-3.01-.11-.28-.5-1.43.11-2.97 0 0 .94-.3 3.1 1.15a10.8 10.8 0 0 1 5.64 0c2.15-1.45 3.1-1.15 3.1-1.15.6 1.54.22 2.69.1 2.97.73.78 1.16 1.78 1.16 3.01 0 4.34-2.64 5.3-5.16 5.58.41.36.78 1.06.78 2.14v3.15c0 .3.2.65.78.54A11.3 11.3 0 0 0 12 .7Z"/></svg></a><a class="btn btn-small btn-mint" href="#install">Get Tachyon <span aria-hidden="true">↗</span></a><button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button></div>
+    <div class="hero-art">
+      <img src="assets/event-horizon.png" width="480" height="270"
+        alt="The Event Horizon, a pixel-art bar. Tachyon, a glowing orb, pours a drink behind the counter beside Bob the robot, while villagers eat, chat and play pool." />
+    </div>
+    <div class="speech" role="group" aria-labelledby="hero-title">
+      <div class="speech-portrait"><img src="assets/tachyon.png" alt="" width="20" height="20" /><span>Tachyon</span></div>
+      <div class="speech-body">
+        <h1 id="hero-title">A desktop workspace for sales cadences</h1>
+        <p class="speech-line" data-type>Welcome to The Event Horizon. Bring in your accounts and contacts, draft your emails, plan your next steps and log your calls, all in one cadence. While imports run, I’ll tell you exactly what’s happening.</p>
+        <div class="speech-choices">
+          <a class="button button-primary" href="#cadence">Show me a cadence</a>
+          <a class="button" href="#install">Get the app</a>
+        </div>
+      </div>
+    </div>
   </header>
+
   <main id="main">
-    <section class="hero section-wrap" aria-labelledby="hero-title">
-      <div class="hero-text reveal">
-        <div class="eyebrow"><span class="status-led"></span> YOUR LITTLE UNIVERSE OF WORK <span class="mini-star">✦</span></div>
-        <h1 id="hero-title">Work moves fast.<br/><em>Stay in orbit.</em></h1>
-        <p class="hero-lede">Meet <strong>Tachyon Village</strong> — a cozy, game-inspired desktop workspace for your sales cadences, contacts, outreach drafts and next steps.</p>
-        <div class="hero-actions"><a class="btn btn-peach" href="#install"><span aria-hidden="true">↓</span> Get started <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#showcase">Explore the village <span aria-hidden="true">↗</span></a></div>
-        <div class="hero-note"><span class="tiny-check">✦</span> Built for focused workflows <span class="dot-sep">·</span> Designed with a little magic</div>
+    <section class="cadence" id="cadence" aria-labelledby="cadence-title">
+      <div class="wrap">
+        <h2 id="cadence-title">A cadence, start to finish</h2>
+        <p class="lede">A cadence is one campaign: the companies you’re going after, the people in them, and everything you do to reach them. Here is one being built in the app.</p>
+        <ol class="steps">
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">1</span>
+              <h3>Create the cadence</h3>
+              <p>Give it a name. Add a short brief about the product, the industry and who it’s for, and Bob uses it to write your messaging and prepare your calls.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-create.webp" width="1600" height="1054" loading="lazy" alt="The Create New Cadence window, with a name field and Bob asking about the campaign. Tachyon’s tutorial bubble points at the name field." /></figure>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">2</span>
+              <h3>Add your accounts</h3>
+              <p>Sign in to Salesforce in Chrome, pick your territory, and the accounts come across. Each one is matched by its Salesforce ID, so nothing is added twice.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-accounts.webp" width="1600" height="1054" loading="lazy" alt="The Add Salesforce Accounts window explaining three steps: sign in, export accounts, review and finish." /></figure>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">3</span>
+              <h3>Import the people</h3>
+              <p>The workspace turns into The Event Horizon. Tachyon asks how to search Cognism, how many pages to save and whether to send the list to Salesloft, then reports every contact as it’s read.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-contacts.webp" width="1600" height="1031" loading="lazy" alt="The Event Horizon bar with Tachyon’s speech box asking whether to build the Cognism search from a persona or use your own filters." /></figure>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">4</span>
+              <h3>Draft your emails</h3>
+              <p>Choose the recipients, write the message or ask Bob for one, and approve the preview. Outlook saves them as drafts for you to check and send yourself.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-outreach.webp" width="1600" height="1054" loading="lazy" alt="The Outreach tab listing two draft attempts, with the date each email was sent and whether they replied." /></figure>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">5</span>
+              <h3>Plan what comes next</h3>
+              <p>Add follow-up calls and emails as next steps. Every cadence’s plan meets in one calendar, so you can see the whole week at once.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-plan.webp" width="1600" height="1031" loading="lazy" alt="The calendar’s agenda for one day, with reminders from two cadences." /></figure>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <span class="step-number" aria-hidden="true">6</span>
+              <h3>Log your calls</h3>
+              <p>After each call, note who, when, the outcome and what was said. One button logs them all in Salesloft, and each call is logged once, even if something goes wrong halfway.</p>
+            </div>
+            <figure class="shot"><img src="assets/step-calls.webp" width="1600" height="1054" loading="lazy" alt="The Log Book tab with two calls ready for Salesloft and a button to log them." /></figure>
+          </li>
+        </ol>
       </div>
-      <div class="hero-art reveal">
-        <div class="hero-halo"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="orb-wrap"><img class="hero-orb" src="assets/orb.svg" alt="Tachyon's smiling pixel orb mascot surrounded by a blue wave"/><div class="orb-trail" aria-hidden="true"></div></div>
-        <div class="pixel-spark spark-one">✧</div><div class="pixel-spark spark-two">✦</div><div class="pixel-spark spark-three">✧</div>
-        <div class="floating-chip chip-top"><span class="chip-icon">✦</span> Plan your next move</div><div class="floating-chip chip-bottom"><span class="chip-icon">▤</span> Everything in one orbit</div>
-      </div>
-      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
     </section>
-    <section class="trustbar" aria-label="Product highlights"><div class="section-wrap trust-content"><span>✷ A village for your workflows</span><span>◇ Connected cadence views</span><span>☾ Thoughtful, cozy design</span><span>✧ Built for desktop focus</span></div></section>
-    <section class="section-wrap section" id="features" aria-labelledby="features-title">
-      <div class="section-heading reveal"><div class="kicker">01 / WHAT'S INSIDE</div><h2 id="features-title">Everything you need.<br/><span>One little universe.</span></h2><p>Less tab-hopping, more momentum. Find the right people, keep campaigns organised and stay on top of the follow-up.</p></div>
-      <div class="features-grid">
-        <article class="feature-card feature-wide reveal"><div class="feature-top"><div class="feature-icon mint">▤</div><span class="feature-index">01 / ORGANISE</span></div><h3>Cadences that make sense.</h3><p>Create and explore outreach campaigns with account lists, contacts, draft activity and a clear view of what comes next.</p><div class="feature-mini-cadences"><div><span class="line mint-line"></span><b>Spring outreach</b><small>Cadence 01</small></div><div><span class="line pink-line"></span><b>New enquiries</b><small>Cadence 02</small></div><div><span class="line gold-line"></span><b>Product update</b><small>Cadence 03</small></div></div></article>
-        <article class="feature-card reveal"><div class="feature-top"><div class="feature-icon blue">⌕</div><span class="feature-index">02 / DISCOVER</span></div><h3>Contacts in context.</h3><p>Bring prospect information into the cadence where it belongs. Review the details before taking action.</p><div class="card-orb orb-small">◌</div></article>
-        <article class="feature-card reveal"><div class="feature-top"><div class="feature-icon peach">✉</div><span class="feature-index">03 / PREPARE</span></div><h3>Outreach without the chaos.</h3><p>Keep email drafts, attempts and replies visible as part of the campaign journey.</p><div class="tiny-mail">✉ &nbsp; Draft ready <span>✓</span></div></article>
-        <article class="feature-card reveal"><div class="feature-top"><div class="feature-icon lilac">▦</div><span class="feature-index">04 / PLAN</span></div><h3>See what's coming.</h3><p>Bring your scheduled cadence activity into a shared calendar view, so the next step never disappears.</p><div class="mini-calendar"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span><span>2</span><span>3</span><span>4</span><span>5</span><span class="day-active">6</span><span>7</span><span>8</span></div></article>
-        <article class="feature-card feature-wide feature-village reveal"><div class="feature-top"><div class="feature-icon green">⌘</div><span class="feature-index">05 / CONNECT</span></div><h3>A home for your tools.</h3><p>Tachyon is designed to bring workflows such as Salesforce, Cognism, email and calendar activity into a more focused desktop experience. Integration availability depends on your installed version.</p><div class="integration-tags"><span>Salesforce</span><span>Cognism</span><span>Emails</span><span>Calendar</span></div></article>
+
+    <section class="promises" aria-labelledby="promises-title">
+      <div class="wrap">
+        <h2 id="promises-title">What it never does on its own</h2>
+        <ul class="promise-list">
+          <li><strong>It never sends an email.</strong> Outlook only ever saves drafts. Sending is always you.</li>
+          <li><strong>It never signs in for you.</strong> Salesforce, Cognism, Outlook and Salesloft open in Chrome, and you sign in there.</li>
+          <li><strong>It never makes up progress.</strong> Every count you see is one the import actually reported.</li>
+          <li><strong>It never sends your data anywhere new.</strong> Your cadences are files on your own computer.</li>
+        </ul>
       </div>
     </section>
-    <section class="section-wrap section showcase-section" id="showcase" aria-labelledby="showcase-title"><div class="section-heading reveal"><div class="kicker">02 / TAKE A LOOK</div><h2 id="showcase-title">A little world.<br/><span>A lot more organised.</span></h2><p>Peek inside the Tachyon experience. These are design previews; the installed interface may vary by version.</p></div>
-      <div class="showcase-shell reveal"><div class="screenshot-head"><div class="window-dots"><span></span><span></span><span></span></div><span>Tachy-on Village · UI previews</span><span class="mock-window-tag">LOCAL DESKTOP</span></div><div class="screenshot-body"><img id="feature-screenshot" src="assets/screen-home.webp" alt="Tachyon Village welcome screen concept" width="1400" height="875" loading="lazy"/></div></div>
-      <div class="showcase-tabs" role="tablist" aria-label="Preview screens"><button type="button" class="active" role="tab" aria-selected="true" data-shot="home"><span>✦</span> Village home</button><button type="button" role="tab" aria-selected="false" data-shot="cadences"><span>▤</span> Cadences</button><button type="button" role="tab" aria-selected="false" data-shot="workspace"><span>▥</span> Workspace</button><button type="button" role="tab" aria-selected="false" data-shot="calendar"><span>▦</span> Calendar</button><button type="button" role="tab" aria-selected="false" data-shot="import"><span>⌕</span> Import flow</button></div>
-      <p class="screenshot-caption" id="shot-caption">An inviting pixel-art village to start your day.</p>
+
+    <section class="install" id="install" aria-labelledby="install-title">
+      <div class="wrap install-grid">
+        <div>
+          <h2 id="install-title">Get Tachyon Village</h2>
+          <p>For macOS and Windows. Imports need Google Chrome, plus Python with Playwright; the app’s setup check tells you if anything is missing.</p>
+          <p class="release-note" id="release-status">The first public version isn’t out yet. This is where the downloads will be.</p>
+        </div>
+        <div class="downloads" role="group" aria-label="Downloads">
+          <div class="os-switch" role="tablist" aria-label="Choose your system">
+            <button type="button" role="tab" data-os="mac" aria-selected="true">macOS</button>
+            <button type="button" role="tab" data-os="windows" aria-selected="false">Windows</button>
+          </div>
+          <a class="button button-primary download" id="download" href="#install" aria-disabled="true">Download coming soon</a>
+          <p class="download-help" id="download-help">No macOS download has been published yet.</p>
+          <a class="text-link" id="releases" href="#install" hidden>All releases and notes</a>
+        </div>
+      </div>
     </section>
-    <section class="section-wrap section flow-section" id="how-it-works" aria-labelledby="how-title"><div class="section-heading reveal"><div class="kicker">03 / THE JOURNEY</div><h2 id="how-title">From first contact<br/><span>to next chapter.</span></h2><p>The idea is simple: less friction between your tools, more clarity in your outreach process.</p></div><div class="steps"><div class="step reveal"><div class="step-number">01</div><div class="step-symbol">▤</div><h3>Start a cadence</h3><p>Create a campaign, bring in accounts and organise the contacts you want to reach.</p></div><div class="step-connector">····✦····</div><div class="step reveal"><div class="step-number">02</div><div class="step-symbol">✉</div><h3>Prepare your outreach</h3><p>Review contact details, build email drafts and keep attempts together.</p></div><div class="step-connector">····✦····</div><div class="step reveal"><div class="step-number">03</div><div class="step-symbol">☾</div><h3>Stay in orbit</h3><p>Track your progress and plan follow-ups from one cadence workspace.</p></div></div></section>
-    <section class="install-band" id="install"><div class="section-wrap section install-content"><div class="install-heading reveal"><div class="kicker">04 / YOUR NEXT CHAPTER</div><h2>Ready to enter<br/><span>the village?</span></h2><p>Choose your platform and get set up. Downloads will be available here when official builds are published.</p></div><div class="install-card reveal"><div class="install-card-head"><img src="assets/orb.svg" alt="" width="48" height="48"/><div><strong>Tachyon Village</strong><small>DESKTOP APPLICATION</small></div><span class="install-status" id="release-status">RELEASE PENDING</span></div><div class="os-options" role="tablist" aria-label="Operating system"><button class="active" data-os="mac" role="tab" aria-selected="true" type="button"> <span>macOS</span></button><button data-os="windows" role="tab" aria-selected="false" type="button">⊞ <span>Windows</span></button><button data-os="linux" role="tab" aria-selected="false" type="button">⌘ <span>Linux</span></button></div><div class="os-content"><h3 id="os-title">Install on macOS</h3><p id="os-description">Download the signed macOS installer when it is available, open it, and move Tachyon to Applications if prompted.</p><a class="btn btn-peach download-link is-disabled" id="download-btn" href="#install" aria-disabled="true"><span aria-hidden="true">↓</span> <span id="download-label">Download coming soon</span></a><p class="install-helper" id="install-helper">No public installer has been configured yet.</p></div><div class="install-footer"><span>✦ Your setup, your pace</span><a id="releases-link" href="#install">Release notes <span aria-hidden="true">↗</span></a></div></div></div></section>
-    <section class="section-wrap section faq-section" id="faq" aria-labelledby="faq-title"><div class="section-heading reveal"><div class="kicker">05 / GOOD TO KNOW</div><h2 id="faq-title">A few little <span>questions.</span></h2></div><div class="faq-list reveal"><details><summary>Is Tachyon a website or a desktop app?</summary><p>Tachyon Village is designed as a desktop productivity application. This website explains the product and provides links to official desktop installers when they are available.</p></details><details><summary>Does Tachyon automatically send emails?</summary><p>The outreach workflow described here is draft-focused. Review the behaviour and safeguards of your installed version before using connected automations. This site doesn't send emails or run imports.</p></details><details><summary>Which integrations are available?</summary><p>The application is being developed around cadences and workflows involving Salesforce, Cognism, email and calendar. Availability and functionality vary by build, and some modules may still be in development.</p></details><details><summary>How do I get updates?</summary><p>Install the most recent official release from the project's GitHub Releases page once available. Release notes should describe changes and any necessary migration steps.</p></details><details><summary>Can I use Tachyon on my phone?</summary><p>This project is currently presented as a desktop-first application; a mobile app isn't advertised here.</p></details></div></section>
-    <section class="section-wrap closing reveal"><div class="closing-orb"><img src="assets/orb.svg" alt="" width="90" height="90"/></div><div class="kicker">THERE'S ALWAYS A NEXT CHAPTER</div><h2>See you in the <em>village.</em></h2><a class="btn btn-mint" href="#install">Explore installation <span aria-hidden="true">↗</span></a></section>
+
+    <section class="questions" aria-labelledby="questions-title">
+      <div class="wrap">
+        <h2 id="questions-title">Questions</h2>
+        <details>
+          <summary>Is this a website or an app?</summary>
+          <p>An app you install on your computer. This page explains it and will link to the downloads.</p>
+        </details>
+        <details>
+          <summary>Where is my data kept?</summary>
+          <p>In a Tachyon folder in your Documents: one folder per cadence, with your accounts and contacts as spreadsheet files you can open yourself.</p>
+        </details>
+        <details>
+          <summary>Which tools does it work with?</summary>
+          <p>Salesforce for accounts, Cognism for contacts, Outlook for email drafts and Salesloft for calls and contact lists. You use your own accounts for each.</p>
+        </details>
+        <details>
+          <summary>Who are Tachyon and Bob?</summary>
+          <p>Tachyon is the glowing orb who runs the bar and talks you through imports. Bob is the robot assistant who writes messaging, prepares your calls and gives you a daily brief.</p>
+        </details>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="section-wrap footer-content"><a class="brand brand-footer" href="#top"><img src="assets/orb.svg" width="36" height="36" alt=""/><span><strong>TACHYON</strong><small>V I L L A G E</small></span></a><div><span>Made for focused days and curious minds.</span><div class="footer-links"><a href="#features">Features</a><a href="#install">Install</a><a id="footer-repo" href="#install">GitHub</a></div></div><span class="footer-end">✦ YOUR WORK, IN ORBIT.</span></div></footer>
-  <script src="config.js"></script><script src="app.js"></script>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="wordmark wordmark-small"><img src="assets/tachyon.png" alt="" width="20" height="20" />Tachyon Village</span>
+      <a class="text-link" id="repo" href="#main" hidden>Source on GitHub</a>
+    </div>
+  </footer>
 </body>
 </html>

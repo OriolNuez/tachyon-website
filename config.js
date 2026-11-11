@@ -1,16 +1,14 @@
 /**
- * PUBLIC SITE CONFIGURATION
- * Add your actual GitHub repository and published installer URLs here.
- * Leave installer entries blank until there are real, tested release assets.
- * Never put API keys, passwords, or other private information in this file.
+ * Public site settings. Fill these in only with real, public HTTPS addresses.
+ * Leave a download blank until that installer is published and tested: the page then says "coming soon".
+ * Never put passwords, keys or private information here.
  */
 window.TACHYON_SITE = {
   repositoryUrl: "",
   releasesUrl: "",
   downloads: {
     mac: "",
-    windows: "",
-    linux: ""
+    windows: ""
   },
   releaseLabel: ""
 };
