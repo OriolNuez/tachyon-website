@@ -53,12 +53,12 @@
     const code = document.getElementById(button.dataset.copy);
     try {
       await navigator.clipboard.writeText(code.textContent);
-      button.textContent = 'Copied'; status.textContent = 'Install line copied.';
+      button.textContent = 'Copied'; status.textContent = 'Command copied.';
       setTimeout(() => { button.textContent = 'Copy'; }, 2000);
     } catch {
       const range = document.createRange(); range.selectNodeContents(code);
       const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
-      status.textContent = 'Install line selected. Press Command C or Control C to copy it.';
+      status.textContent = 'Command selected. Press Command C or Control C to copy it.';
     }
   }));
 })();

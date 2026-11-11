@@ -146,7 +146,10 @@
                 <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachy-on-Village-mac-arm64.zip">Mac with Apple silicon (M1 and newer)</a> <span>ZIP · 188 MB</span></li>
                 <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachy-on-Village-mac-x64.zip">Mac with Intel</a> <span>ZIP · 197 MB</span></li>
               </ul>
-              <p>Unzip it and drag <em>Tachy-on Village</em> into Applications. The app isn’t signed with a paid Apple developer account, so macOS stops it the first time. Go to <strong>System Settings → Privacy &amp; Security</strong> and choose <strong>Open Anyway</strong>. Not sure which Mac you have? Apple menu → <em>About This Mac</em>: “Chip: Apple M…” means Apple silicon. The Terminal line picks the right one for you.</p>
+              <p>Not sure which Mac you have? Apple menu → <em>About This Mac</em>: “Chip: Apple M…” means Apple silicon.</p>
+              <p>The app isn’t signed with a paid Apple developer account, so if you open the download directly, macOS says it “could not verify” Tachy-on Village. Instead, leave the zip in your Downloads folder and paste this line into Terminal. It installs the app into Applications and opens it.</p>
+              <div class="command"><code id="command-mac-downloaded">(A=$([ "$(sysctl -n hw.optional.arm64 2&gt;/dev/null)" = 1 ] &amp;&amp; echo arm64 || echo x64); Z=$(ls -t ~/Downloads | grep -m1 -E "^(Tachy-on-Village|Tachyon)-mac-$A.*\.zip$"); if [ -z "$Z" ]; then echo "Tachy-on Village for this Mac ($([ $A = x64 ] &amp;&amp; echo Intel || echo Apple silicon)) is not in your Downloads folder yet. Download it from the Tachyon Village page first."; else D=/Applications; [ -w "$D" ] || { D=~/Applications; mkdir -p "$D"; }; T=$(mktemp -d); ditto -x -k ~/Downloads/"$Z" "$T" &amp;&amp; P=$(ls -d "$T"/*.app | head -1) &amp;&amp; N=$(basename "$P") &amp;&amp; rm -rf "${D:?}/${N:?}" &amp;&amp; ditto "$P" "$D/$N" &amp;&amp; xattr -dr com.apple.quarantine "$D/$N" &amp;&amp; open "$D/$N"; rm -rf "${T:?}"; fi)</code><button type="button" class="copy" data-copy="command-mac-downloaded">Copy</button></div>
+              <p>Quit Tachy-on Village first if it’s already open.</p>
             </div>
           </div>
 
