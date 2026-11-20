@@ -1,6 +1,6 @@
-# Tachyon Village — GitHub Pages website
+# Green Scarf — GitHub Pages website
 
-A static promotional and installation website for **Tachyon Village**, built with HTML/CSS/vanilla JavaScript. It requires no build pipeline, npm dependencies or backend.
+A static promotional and installation website for **Green Scarf** (formerly Tachyon Village), built with HTML/CSS/vanilla JavaScript. It requires no build pipeline, npm dependencies or backend.
 
 ## Preview locally
 
@@ -42,14 +42,16 @@ irm https://github.com/OriolNuez/tachyon-website/releases/latest/download/instal
 
 ## Branding / screenshots
 
-- `assets/event-horizon.png` is the app's own pixel-art bar (480x270, scaled with crisp pixels), and `assets/tachyon.png` is Tachyon from the app's sprite.
-- `assets/step-*.webp` are real screenshots of the app taken by its automated tests, which use only invented data.
-- The only motion is Tachyon's opening line typing out, and it's skipped when reduced motion is on.
+- The look matches the app and its deck: forest green on cream, Fraunces headings and Inter text. `assets/logo.webp` is the gentleman portrait from the app (`frontend/assets/gentleman/avatar.jpg`).
+- `assets/gentleman-*.webp` are animated WebPs built from the app's transparent gentleman sprites (intro, bike and hat tip), each with a `-still.webp` shown when reduced motion is on.
+- `assets/shot-*.webp` and `assets/step-contacts.webp` are real screenshots of the app with invented data only.
+- Motion: the opening line types out, the scarf ribbon draws in, and the gentleman animates. All of it stops when reduced motion is on.
+- The release files are still named `Tachy-on-Village-*` and the installed app still opens as Tachy-on Village until the next release; the page says so in the install section.
 - Screenshots should be reviewed carefully before publishing: screenshots or previews containing real company/customer/contact names should be replaced with **sanitised demo data**. Never publish real contact names, email addresses, phone numbers, client information, or campaign data without appropriate authorisation.
 
 ## Before launch checklist
 
-- [ ] Confirm product naming (`Tachyon` / `Tachy-on Village`) and final marketing copy.
+- [ ] Rename the app and its release files to Green Scarf in the next release, then drop the note about the earlier name from the install section.
 - [ ] Replace any screenshot with sensitive or unapproved information with a sanitised demo screenshot.
 - [ ] Confirm that advertised features and supported operating systems match the actual release.
 - [x] Downloads published as release assets and linked with exact file names; install guidance for unsigned builds is on the page.

@@ -1,10 +1,10 @@
 (() => {
   'use strict';
-  const site = window.TACHYON_SITE || {};
+  const site = window.GREEN_SCARF_SITE || {};
   const $ = selector => document.querySelector(selector);
   const https = value => typeof value === 'string' && /^https:\/\//.test(value);
 
-  // The page's one moment of motion: Tachyon's line types out, as it does in the app.
+  // The page's one moment of motion: the opening line types out, as speech does in the app.
   // The full sentence is in the page from the start, so screen readers and search see all of it.
   const line = $('[data-type]');
   if (line && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

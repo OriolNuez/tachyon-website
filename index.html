@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tachyon Village</title>
-  <meta name="description" content="A desktop workspace for sales cadences: accounts, contacts, email drafts, next steps and calls in one place, with Tachyon telling you what’s happening." />
-  <meta property="og:title" content="Tachyon Village" />
-  <meta property="og:description" content="A desktop workspace for sales cadences, with a little pixel-art village around it." />
+  <title>Green Scarf</title>
+  <meta name="description" content="A desktop app for sales outreach: accounts, contacts, email drafts, inbound leads and follow-up in one place. It runs the busywork and leaves the judgement to you." />
+  <meta property="og:title" content="Green Scarf" />
+  <meta property="og:description" content="Less copying between tools. Faster to the people who asked." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://oriolnuez.github.io/tachyon-website/assets/social-preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#1f1830" />
+  <meta name="theme-color" content="#1C3326" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
@@ -23,107 +24,174 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="hero">
-    <nav class="topbar" aria-label="Site">
-      <a class="wordmark" href="#main"><img src="assets/tachyon.png" alt="" width="28" height="28" />Tachyon Village</a>
+    <nav class="topbar wrap" aria-label="Site">
+      <a class="wordmark" href="#main"><img src="assets/logo.webp" alt="" width="40" height="40" />Green Scarf</a>
       <div class="topbar-links">
-        <a href="#cadence">How it works</a>
+        <a href="#workflow">How it works</a>
+        <a href="#bob">Ask Bob</a>
+        <a href="#leads">Inbound leads</a>
         <a href="#install" class="topbar-get">Get the app</a>
       </div>
     </nav>
-    <div class="hero-art">
-      <img src="assets/event-horizon.png" width="480" height="270"
-        alt="The Event Horizon, a pixel-art bar. Tachyon, a glowing orb, pours a drink behind the counter beside Bob the robot, while villagers eat, chat and play pool." />
-    </div>
-    <div class="speech" role="group" aria-labelledby="hero-title">
-      <div class="speech-portrait"><img src="assets/tachyon.png" alt="" width="20" height="20" /><span>Tachyon</span></div>
-      <div class="speech-body">
-        <h1 id="hero-title">A desktop workspace for sales cadences</h1>
-        <p class="speech-line" data-type>Welcome to The Event Horizon. Bring in your accounts and contacts, draft your emails, plan your next steps and log your calls, all in one cadence. While imports run, I’ll tell you exactly what’s happening.</p>
-        <div class="speech-choices">
-          <a class="button button-primary" href="#cadence">Show me a cadence</a>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">A desktop app for sales outreach</p>
+        <h1 id="hero-title">Less copying between tools. Faster to the people who asked.</h1>
+        <p class="hero-lead" data-type>Green Scarf brings your accounts, contacts, email drafts, inbound leads and follow-up into one cadence. It runs the busywork, tells you exactly what it did, and leaves the judgement to you.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">See a cadence</a>
           <a class="button" href="#install">Get the app</a>
         </div>
       </div>
+      <figure class="hero-mascot">
+        <picture>
+          <source srcset="assets/gentleman-intro-still.webp" media="(prefers-reduced-motion: reduce)" />
+          <img src="assets/gentleman-intro.webp" width="360" height="598" alt="The Green Scarf gentleman: top hat, tailcoat and a long green scarf, raising his hat in greeting." />
+        </picture>
+      </figure>
     </div>
+    <svg class="scarf-ribbon" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M-20 80 C220 30 460 110 720 70 C980 30 1200 100 1460 60" /></svg>
   </header>
 
   <main id="main">
-    <section class="cadence" id="cadence" aria-labelledby="cadence-title">
+    <section class="problem" aria-labelledby="problem-title">
       <div class="wrap">
-        <h2 id="cadence-title">A cadence, start to finish</h2>
-        <p class="lede">A cadence is one campaign: the companies you’re going after, the people in them, and everything you do to reach them. Here is one being built in the app.</p>
+        <p class="eyebrow">The problem</p>
+        <h2 id="problem-title">Outreach lives in five tools, and the glue is copy and paste</h2>
+        <ul class="tools">
+          <li><strong>IBM Sales Cloud</strong><span>Territories, accounts, leads and sales plays.</span></li>
+          <li><strong>Cognism</strong><span>The people at those accounts.</span></li>
+          <li><strong>Outlook</strong><span>Where every first email is written, one by one.</span></li>
+          <li><strong>Salesloft</strong><span>Calls, steps and what’s due next.</span></li>
+          <li><strong>Spreadsheets</strong><span>Where lists get exported, cleaned and imported again.</span></li>
+        </ul>
+        <p class="problem-note">Meanwhile, free-trial leads wait, and the trial clock keeps ticking.</p>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The workflow</p>
+            <h2 id="workflow-title">One cadence, start to finish</h2>
+            <p class="lede">A cadence is one campaign: the companies you’re going after, the people in them, and everything you do to reach them. Every step writes to the cadence’s own files, so you can stop, check and carry on.</p>
+          </div>
+          <picture class="section-mascot">
+            <source srcset="assets/gentleman-bike-still.webp" media="(prefers-reduced-motion: reduce)" />
+            <img src="assets/gentleman-bike.webp" width="240" height="394" loading="lazy" alt="The gentleman pedals a penny-farthing, scarf flying: the app’s animation for fast work." />
+          </picture>
+        </div>
         <ol class="steps">
           <li class="step">
             <div class="step-text">
               <span class="step-number" aria-hidden="true">1</span>
-              <h3>Create the cadence</h3>
-              <p>Give it a name. Add a short brief about the product, the industry and who it’s for, and Bob uses it to write your messaging and prepare your calls.</p>
+              <h3>Add your accounts</h3>
+              <p>Save your territory’s coverage IDs once, then bring accounts in from a territory or a prospecting list in IBM Sales Cloud. Each account shows the sales plays recommended for it, so the first email has a reason.</p>
             </div>
-            <figure class="shot"><img src="assets/step-create.webp" width="1600" height="1054" loading="lazy" alt="The Create New Cadence window, with a name field and Bob asking about the campaign. Tachyon’s tutorial bubble points at the name field." /></figure>
+            <figure class="shot"><img src="assets/shot-setup.webp" width="1600" height="863" loading="lazy" alt="The Setup check page: two invented coverage IDs with labels, and settings for ambient motion." /></figure>
           </li>
           <li class="step">
             <div class="step-text">
               <span class="step-number" aria-hidden="true">2</span>
-              <h3>Add your accounts</h3>
-              <p>Sign in to Salesforce in Chrome, pick your territory, and the accounts come across. Each one is matched by its Salesforce ID, so nothing is added twice.</p>
+              <h3>Find the people</h3>
+              <p>The workspace turns into The Event Horizon, a bar where imports are ordered, not configured. Pick your own Cognism filters or a persona, say how many pages, and watch the chalkboard count every contact the import confirms. New people merge by email; nothing is overwritten.</p>
             </div>
-            <figure class="shot"><img src="assets/step-accounts.webp" width="1600" height="1054" loading="lazy" alt="The Add Salesforce Accounts window explaining three steps: sign in, export accounts, review and finish." /></figure>
+            <figure class="shot"><img src="assets/step-contacts.webp" width="1600" height="1031" loading="lazy" alt="The Event Horizon bar, with a speech box asking whether to build the Cognism search from a persona or use your own filters." /></figure>
           </li>
           <li class="step">
             <div class="step-text">
               <span class="step-number" aria-hidden="true">3</span>
-              <h3>Import the people</h3>
-              <p>The workspace turns into The Event Horizon. Tachyon asks how to search Cognism, how many pages to save and whether to send the list to Salesloft, then reports every contact as it’s read.</p>
+              <h3>Check before you contact</h3>
+              <p>Every cadence opens on what’s next. Look each contact up in IBM Sales Cloud first: bounced, opted out, or already in a Salesloft cadence with a step due. Gaps and uncertain matches are flagged for review, never guessed.</p>
             </div>
-            <figure class="shot"><img src="assets/step-contacts.webp" width="1600" height="1031" loading="lazy" alt="The Event Horizon bar with Tachyon’s speech box asking whether to build the Cognism search from a persona or use your own filters." /></figure>
+            <figure class="shot"><img src="assets/shot-cadence.webp" width="1600" height="863" loading="lazy" alt="An invented cadence called Synthetic workspace: 61 contacts not drafted yet, a Draft Emails button, counts, and the contacts table with Check in ISC." /></figure>
           </li>
           <li class="step">
             <div class="step-text">
               <span class="step-number" aria-hidden="true">4</span>
-              <h3>Draft your emails</h3>
-              <p>Choose the recipients, write the message or ask Bob for one, and approve the preview. Outlook saves them as drafts for you to check and send yourself.</p>
+              <h3>Write, then draft</h3>
+              <p>Bob drafts the angle and you edit it. See every email as it will be drafted: recipients, subject and message, with the step it belongs to. Outlook saves them as drafts, and you read them and press Send yourself.</p>
             </div>
-            <figure class="shot"><img src="assets/step-outreach.webp" width="1600" height="1054" loading="lazy" alt="The Outreach tab listing two draft attempts, with the date each email was sent and whether they replied." /></figure>
+            <div class="callout" aria-label="What the app says when drafting succeeds">
+              <p class="callout-quote">“Drafts created — check your drafts.”</p>
+              <p>Drafted, sent, replied, failed, skipped and uncertain are kept as separate states. Uncertain attempts wait for your review before anything is retried.</p>
+            </div>
           </li>
           <li class="step">
             <div class="step-text">
               <span class="step-number" aria-hidden="true">5</span>
-              <h3>Plan what comes next</h3>
-              <p>Add follow-up calls and emails as next steps. Every cadence’s plan meets in one calendar, so you can see the whole week at once.</p>
+              <h3>Follow up on time</h3>
+              <p>Record when emails were actually sent, and the next calls and emails land in one calendar across every cadence. Log your calls once, and they go to Salesloft once, even if something goes wrong halfway.</p>
             </div>
-            <figure class="shot"><img src="assets/step-plan.webp" width="1600" height="1031" loading="lazy" alt="The calendar’s agenda for one day, with reminders from two cadences." /></figure>
-          </li>
-          <li class="step">
-            <div class="step-text">
-              <span class="step-number" aria-hidden="true">6</span>
-              <h3>Log your calls</h3>
-              <p>After each call, note who, when, the outcome and what was said. One button logs them all in Salesloft, and each call is logged once, even if something goes wrong halfway.</p>
+            <div class="callout callout-soft">
+              <p class="callout-quote">Follow-ups start from a confirmed sent date, never from a draft alone.</p>
             </div>
-            <figure class="shot"><img src="assets/step-calls.webp" width="1600" height="1054" loading="lazy" alt="The Log Book tab with two calls ready for Salesloft and a button to log them." /></figure>
           </li>
         </ol>
       </div>
     </section>
 
+    <section class="bob" id="bob" aria-labelledby="bob-title">
+      <div class="wrap">
+        <p class="eyebrow">Ask Bob</p>
+        <h2 id="bob-title">Ask in plain words, and Bob opens the right place</h2>
+        <div class="chat" aria-label="Example questions for Bob">
+          <p class="msg msg-you">How many trials started this month?</p>
+          <p class="msg msg-bob">Counts by product, how many are waiting, and when your leads were last read. Want a cadence for them?</p>
+          <p class="msg msg-you">Make a prospecting list of universities in my territory.</p>
+          <p class="msg msg-bob">I’ll create it in IBM Sales Cloud with your coverage IDs. Check it before I add anything.</p>
+        </div>
+        <ul class="bob-cards">
+          <li><figure class="shot"><img src="assets/shot-brief.webp" width="1400" height="837" loading="lazy" alt="Bob’s Daily brief with invented data: due today, waiting for a sent date, and the next seven days." /></figure><h3>Daily brief</h3><p>Due today, what’s waiting, and the week ahead.</p></li>
+          <li><figure class="shot"><img src="assets/shot-rank.webp" width="1400" height="1084" loading="lazy" alt="Rank accounts with Bob: invented notes, and a table of tiers, each with a quote from the notes." /></figure><h3>Rank accounts</h3><p>Tiers from your own notes, each with its quote. No quote, no rank.</p></li>
+          <li><figure class="shot"><img src="assets/shot-insights.webp" width="1400" height="1229" loading="lazy" alt="Cadence insights with Bob: invented counts by email step, and a low-confidence note because too few emails were sent." /></figure><h3>Cadence insights</h3><p>Results by step, and how sure Bob is.</p></li>
+        </ul>
+        <p class="fine">Bob only gets company-level facts and counts, never contact names or emails. Anything that changes something, like creating a list or a cadence, is shown to you first.</p>
+      </div>
+    </section>
+
+    <section class="leads" id="leads" aria-labelledby="leads-title">
+      <div class="wrap">
+        <p class="eyebrow">New · Inbound leads</p>
+        <h2 id="leads-title">Free trials are the strongest signal. Now you can see them, and act on them.</h2>
+        <figure class="shot shot-wide"><img src="assets/shot-analytics.webp" width="1800" height="600" loading="lazy" alt="The Analytics page with invented leads: tiles for trials started and leads waiting, trials by product, and a chart of trials per week." /></figure>
+        <ol class="lead-flow">
+          <li><span class="lead-step">See</span><h3>Analytics</h3><p>Trials by product and week, who’s waiting, and where each trial has got to. Click any number to see who.</p></li>
+          <li><span class="lead-step">Act</span><h3>Start a cadence</h3><p>Pick the leads, check each one first, and add their companies as accounts. Leads you shouldn’t contact are left out, with the reason.</p></li>
+          <li><span class="lead-step">Widen</span><h3>Find more people</h3><p>Cognism finds the buying group at each company, so one trial becomes an account play.</p></li>
+        </ol>
+        <div class="leads-more">
+          <figure class="shot"><img src="assets/shot-events.webp" width="1350" height="502" loading="lazy" alt="The Events tab of the lead-source carousel: product chips, and invented events with product and theme tags and a Cadence button." /></figure>
+          <div><h3>Not just trials</h3><p>Events, webinars, whitepapers and web forms are matched to products and themes, grouped by event or asset, and each group can start its own cadence.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="promises" aria-labelledby="promises-title">
       <div class="wrap">
-        <h2 id="promises-title">What it never does on its own</h2>
+        <h2 id="promises-title">The rules Green Scarf never bends</h2>
         <ul class="promise-list">
-          <li><strong>It never sends an email.</strong> Outlook only ever saves drafts. Sending is always you.</li>
-          <li><strong>It never signs in for you.</strong> Salesforce, Cognism, Outlook and Salesloft open in Chrome, and you sign in there.</li>
-          <li><strong>It never makes up progress.</strong> Every count you see is one the import actually reported.</li>
-          <li><strong>It never sends your data anywhere new.</strong> Your cadences are files on your own computer.</li>
+          <li><strong>It never sends an email.</strong> Outlook success means a saved draft you can check, nothing more.</li>
+          <li><strong>It never signs in for you.</strong> Each tool opens in Green Scarf’s own Chrome, with its own profile, and you sign in there.</li>
+          <li><strong>It never makes up progress.</strong> Counts move only on steps the import actually confirms, never on animation.</li>
+          <li><strong>Your data stays on your computer.</strong> Contacts, leads and cadences are files on your device.</li>
+          <li><strong>Bob sees counts, not people.</strong> Company facts, products and numbers only.</li>
+          <li><strong>It reads before it writes.</strong> IBM Sales Cloud is only read, apart from a prospecting list you asked Bob to create.</li>
         </ul>
       </div>
     </section>
 
     <section class="install" id="install" aria-labelledby="install-title">
       <div class="wrap install-grid">
-        <div>
-          <h2 id="install-title">Get Tachyon Village</h2>
-          <p>For Macs with Apple silicon or Intel, and for Windows. Tachyon brings everything it needs with it. The only thing to have installed is <a href="https://www.google.com/chrome/">Google Chrome</a>, which the Cognism, Salesforce, Outlook and Salesloft tasks open.</p>
+        <div class="install-intro">
+          <p class="eyebrow">Download</p>
+          <h2 id="install-title">Get Green Scarf</h2>
+          <p>For Macs with Apple silicon or Intel, and for Windows. The app brings everything it needs with it. The only thing to have installed is <a href="https://www.google.com/chrome/">Google Chrome</a>, which the IBM Sales Cloud, Cognism, Outlook and Salesloft tasks open.</p>
           <p>One line in Terminal (or PowerShell on Windows) installs it. Running the same line again updates it, and your cadences are never touched.</p>
           <p class="release-note" id="release-status">Version 0.1.0 · November 2026</p>
+          <p class="release-note">The current download, 0.1.0, still opens under the app’s earlier name, Tachy-on Village. The Green Scarf name arrives with the next release.</p>
+          <picture class="install-mascot"><source srcset="assets/gentleman-tip-still.webp" media="(prefers-reduced-motion: reduce)" /><img src="assets/gentleman-tip.webp" width="280" height="465" loading="lazy" alt="The gentleman tips his hat." /></picture>
         </div>
         <div class="downloads" aria-label="Downloads">
           <div class="os-switch" role="tablist" aria-label="Choose your system">
@@ -138,7 +206,7 @@
               <li><strong>Paste this line and press <kbd>Return</kbd>.</strong>
                 <div class="command"><code id="command-mac">curl -fsSL https://github.com/OriolNuez/tachyon-website/releases/latest/download/install.sh | bash</code><button type="button" class="copy" data-copy="command-mac">Copy</button></div>
               </li>
-              <li><strong>That’s it.</strong> Tachyon Village opens from your Applications folder when it’s done, usually within a minute. It needs macOS 12 or newer.</li>
+              <li><strong>That’s it.</strong> The app opens from your Applications folder when it’s done, usually within a minute. It needs macOS 12 or newer.</li>
             </ol>
             <div class="alt-downloads">
               <h4>Or download it yourself</h4>
@@ -160,7 +228,7 @@
               <li><strong>Paste this line and press <kbd>Enter</kbd>.</strong>
                 <div class="command"><code id="command-windows">irm https://github.com/OriolNuez/tachyon-website/releases/latest/download/install.ps1 | iex</code><button type="button" class="copy" data-copy="command-windows">Copy</button></div>
               </li>
-              <li><strong>That’s it.</strong> Open Tachyon Village from the Start menu or your desktop. It installs for your user only, so no administrator rights are needed. Windows 10 or 11, 64-bit.</li>
+              <li><strong>That’s it.</strong> Open Tachy-on Village from the Start menu or your desktop. It installs for your user only, so no administrator rights are needed. Windows 10 or 11, 64-bit.</li>
             </ol>
             <div class="alt-downloads">
               <h4>Or download it yourself</h4>
@@ -186,23 +254,23 @@
         </details>
         <details>
           <summary>Why install with a command?</summary>
-          <p>Tachyon isn’t signed with a paid Apple or Microsoft developer account. A file downloaded in a browser gets flagged, so macOS refuses to open it and Windows shows a warning. The install line downloads the app directly instead. It also checks the download against its published checksum, and installs nothing if they don’t match.</p>
+          <p>The app isn’t signed with a paid Apple or Microsoft developer account. A file downloaded in a browser gets flagged, so macOS refuses to open it and Windows shows a warning. The install line downloads the app directly instead. It also checks the download against its published checksum, and installs nothing if they don’t match.</p>
         </details>
         <details>
           <summary>How do I update or uninstall it?</summary>
-          <p>To update, run the same install line again. To uninstall on a Mac, drag Tachy-on Village from Applications to the Bin. On Windows, use Settings → Apps → Installed apps. Neither removes your cadences, which stay in the Tachyon folder in your Documents.</p>
+          <p>To update, run the same install line again. To uninstall on a Mac, drag the app from Applications to the Bin. On Windows, use Settings → Apps → Installed apps. Neither removes your cadences, which stay in their folder in your Documents.</p>
         </details>
         <details>
           <summary>Where is my data kept?</summary>
-          <p>In a Tachyon folder in your Documents: one folder per cadence, with your accounts and contacts as spreadsheet files you can open yourself.</p>
+          <p>On your own computer: one folder per cadence, with your accounts and contacts as spreadsheet files you can open yourself.</p>
         </details>
         <details>
           <summary>Which tools does it work with?</summary>
-          <p>Salesforce for accounts, Cognism for contacts, Outlook for email drafts and Salesloft for calls and contact lists. You use your own accounts for each.</p>
+          <p>IBM Sales Cloud for territories, accounts and leads, Cognism for contacts, Outlook for email drafts and Salesloft for calls. You use your own accounts for each.</p>
         </details>
         <details>
-          <summary>Who are Tachyon and Bob?</summary>
-          <p>Tachyon is the glowing orb who runs the bar and talks you through imports. Bob is the robot assistant who writes messaging, prepares your calls and gives you a daily brief.</p>
+          <summary>Who are the gentleman and Bob?</summary>
+          <p>The gentleman in the green scarf is the app’s host: he greets you, pedals off when work is quick, and checks his watch when it takes a while. Bob is the assistant who writes messaging, prepares your calls and gives you a daily brief.</p>
         </details>
       </div>
     </section>
@@ -210,7 +278,7 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span class="wordmark wordmark-small"><img src="assets/tachyon.png" alt="" width="20" height="20" />Tachyon Village</span>
+      <span class="wordmark wordmark-small"><img src="assets/logo.webp" alt="" width="28" height="28" />Green Scarf</span>
       <a class="text-link" id="repo" href="#main" hidden>Source on GitHub</a>
     </div>
   </footer>
