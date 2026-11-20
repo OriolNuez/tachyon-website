@@ -27,6 +27,7 @@
     <nav class="topbar wrap" aria-label="Site">
       <a class="wordmark" href="#main"><img src="assets/logo.webp" alt="" width="40" height="40" />Green Scarf</a>
       <div class="topbar-links">
+        <a href="#time">Time back</a>
         <a href="#workflow">How it works</a>
         <a href="#bob">Ask Bob</a>
         <a href="#leads">Inbound leads</a>
@@ -66,6 +67,59 @@
           <li><strong>Spreadsheets</strong><span>Where lists get exported, cleaned and imported again.</span></li>
         </ul>
         <p class="problem-note">Meanwhile, free-trial leads wait, and the trial clock keeps ticking.</p>
+      </div>
+    </section>
+
+    <section class="time" id="time" aria-labelledby="time-title">
+      <div class="wrap">
+        <p class="eyebrow">Time is money</p>
+        <div class="time-head">
+          <div>
+            <h2 id="time-title"><span class="big-num">6½ hours</span> back for every seller, every week</h2>
+            <p class="lede">Weekly admin drops from 7 hours 25 minutes to about 55 minutes. The time goes back into calls, meetings and pipeline.</p>
+          </div>
+          <ul class="time-stats">
+            <li><strong>2 min</strong><span>to log one call in Salesloft by hand</span></li>
+            <li><strong>3 min</strong><span>to add one contact to Salesloft before their call can be logged</span></li>
+            <li><strong>53%</strong><span>of calls reach Salesloft today. With Green Scarf, every recorded call does.</span></li>
+          </ul>
+        </div>
+        <div class="time-chart">
+          <div class="legend" aria-hidden="true"><span><i class="key key-hand"></i>By hand</span><span><i class="key key-app"></i>With Green Scarf</span></div>
+          <table>
+            <caption class="sr-only">Minutes per seller, per week, by hand and with Green Scarf</caption>
+            <thead><tr><th scope="col">Task, each week</th><th scope="col">By hand</th><th scope="col">With Green Scarf</th></tr></thead>
+            <tbody>
+            <tr>
+              <th scope="row">Drafting 50 emails<span>5 min each, down to under 1</span></th>
+              <td data-label="By hand"><span class="bar-row"><span class="bar bar-hand" style="width:72.0%"></span><span class="bar-val">250 min</span></span></td>
+              <td data-label="With Green Scarf"><span class="bar-row"><span class="bar bar-app" style="width:14.4%"></span><span class="bar-val">under 50 min</span></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Logging 40 calls in Salesloft<span>2 min each, or one batch in about 20 seconds</span></th>
+              <td data-label="By hand"><span class="bar-row"><span class="bar bar-hand" style="width:23.0%"></span><span class="bar-val">80 min</span></span></td>
+              <td data-label="With Green Scarf"><span class="bar-row"><span class="bar bar-app" style="width:0.1%"></span><span class="bar-val">20 seconds</span></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Adding 19 contacts to Salesloft<span>3 min each, or added in the same batch</span></th>
+              <td data-label="By hand"><span class="bar-row"><span class="bar bar-hand" style="width:16.4%"></span><span class="bar-val">57 min</span></span></td>
+              <td data-label="With Green Scarf"><span class="bar-row"><span class="bar bar-app bar-zero"></span><span class="bar-val">in the batch</span></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Importing a contact list<span>From Cognism to Salesloft</span></th>
+              <td data-label="By hand"><span class="bar-row"><span class="bar bar-hand" style="width:14.4%"></span><span class="bar-val">50 min</span></span></td>
+              <td data-label="With Green Scarf"><span class="bar-row"><span class="bar bar-app" style="width:1.4%"></span><span class="bar-val">5 min</span></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Exporting accounts<span>30 min a month, now instant</span></th>
+              <td data-label="By hand"><span class="bar-row"><span class="bar bar-hand" style="width:2.2%"></span><span class="bar-val">7.5 min</span></span></td>
+              <td data-label="With Green Scarf"><span class="bar-row"><span class="bar bar-app bar-zero"></span><span class="bar-val">instant</span></span></td>
+            </tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Every week, per seller</th><td data-label="By hand">7 h 25 min</td><td data-label="With Green Scarf">about 55 min</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="fine">Seller-supplied timings. 19 contacts is the 47% of 40 weekly calls whose contact isn’t in Salesloft yet. “Under 1 minute” per email is counted as a full minute, so the total with Green Scarf is an upper bound.</p>
       </div>
     </section>
 
@@ -122,7 +176,7 @@
             <div class="step-text">
               <span class="step-number" aria-hidden="true">5</span>
               <h3>Follow up on time</h3>
-              <p>Record when emails were actually sent, and the next calls and emails land in one calendar across every cadence. Log your calls once, and they go to Salesloft once, even if something goes wrong halfway.</p>
+              <p>Record when emails were actually sent, and the next calls and emails land in one calendar across every cadence. One click logs the whole batch of calls to Salesloft, 40 calls in about 20 seconds, adding missing contacts on the way. Each call is logged once, even if something fails halfway.</p>
             </div>
             <div class="callout callout-soft">
               <p class="callout-quote">Follow-ups start from a confirmed sent date, never from a draft alone.</p>
@@ -174,6 +228,7 @@
         <ul class="promise-list">
           <li><strong>It never sends an email.</strong> Outlook success means a saved draft you can check, nothing more.</li>
           <li><strong>It never signs in for you.</strong> Each tool opens in Green Scarf’s own Chrome, with its own profile, and you sign in there.</li>
+          <li><strong>Opt-outs carry across.</strong> An opted-out contact is left out of drafts in every cadence.</li>
           <li><strong>It never makes up progress.</strong> Counts move only on steps the import actually confirms, never on animation.</li>
           <li><strong>Your data stays on your computer.</strong> Contacts, leads and cadences are files on your device.</li>
           <li><strong>Bob sees counts, not people.</strong> Company facts, products and numbers only.</li>
