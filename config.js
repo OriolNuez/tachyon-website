@@ -5,5 +5,5 @@
 window.GREEN_SCARF_SITE = {
   repositoryUrl: "https://github.com/OriolNuez/tachyon-website",
   releasesUrl: "https://github.com/OriolNuez/tachyon-website/releases",
-  releaseLabel: "Version 0.1.0 · November 2026"
+  releaseLabel: "Version 0.2.0 · November 2026"
 };

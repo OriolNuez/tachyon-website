@@ -244,8 +244,8 @@
           <h2 id="install-title">Get Green Scarf</h2>
           <p>For Macs with Apple silicon or Intel, and for Windows. The app brings everything it needs with it. The only thing to have installed is <a href="https://www.google.com/chrome/">Google Chrome</a>, which the IBM Sales Cloud, Cognism, Outlook and Salesloft tasks open.</p>
           <p>One line in Terminal (or PowerShell on Windows) installs it. Running the same line again updates it, and your cadences are never touched.</p>
-          <p class="release-note" id="release-status">Version 0.1.0 · November 2026</p>
-          <p class="release-note">The current download, 0.1.0, still opens under the app’s earlier name, Tachy-on Village. The Green Scarf name arrives with the next release.</p>
+          <p class="release-note" id="release-status">Version 0.2.0 · November 2026</p>
+          <p class="release-note">Green Scarf installs as an app called Tachyon. It replaces Tachy-on Village if you have it, and keeps your cadences and settings. Ask Bob needs IBM Bob Shell on your computer and an IBM sign-in.</p>
           <picture class="install-mascot"><source srcset="assets/gentleman-tip-still.webp" media="(prefers-reduced-motion: reduce)" /><img src="assets/gentleman-tip.webp" width="280" height="465" loading="lazy" alt="The gentleman tips his hat." /></picture>
         </div>
         <div class="downloads" aria-label="Downloads">
@@ -266,13 +266,13 @@
             <div class="alt-downloads">
               <h4>Or download it yourself</h4>
               <ul>
-                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachy-on-Village-mac-arm64.zip">Mac with Apple silicon (M1 and newer)</a> <span>ZIP · 188 MB</span></li>
-                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachy-on-Village-mac-x64.zip">Mac with Intel</a> <span>ZIP · 197 MB</span></li>
+                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachyon-mac-arm64.zip">Mac with Apple silicon (M1 and newer)</a> <span>ZIP · 214 MB</span></li>
+                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachyon-mac-x64.zip">Mac with Intel</a> <span>ZIP · 223 MB</span></li>
               </ul>
               <p>Not sure which Mac you have? Apple menu → <em>About This Mac</em>: “Chip: Apple M…” means Apple silicon.</p>
-              <p>The app isn’t signed with a paid Apple developer account, so if you open the download directly, macOS says it “could not verify” Tachy-on Village. Instead, leave the zip in your Downloads folder and paste this line into Terminal. It installs the app into Applications and opens it.</p>
-              <div class="command"><code id="command-mac-downloaded">(A=$([ "$(sysctl -n hw.optional.arm64 2&gt;/dev/null)" = 1 ] &amp;&amp; echo arm64 || echo x64); Z=$(ls -t ~/Downloads | grep -m1 -E "^(Tachy-on-Village|Tachyon)-mac-$A.*\.zip$"); if [ -z "$Z" ]; then echo "Tachy-on Village for this Mac ($([ $A = x64 ] &amp;&amp; echo Intel || echo Apple silicon)) is not in your Downloads folder yet. Download it from the Tachyon Village page first."; else D=/Applications; [ -w "$D" ] || { D=~/Applications; mkdir -p "$D"; }; T=$(mktemp -d); ditto -x -k ~/Downloads/"$Z" "$T" &amp;&amp; P=$(ls -d "$T"/*.app | head -1) &amp;&amp; N=$(basename "$P") &amp;&amp; rm -rf "${D:?}/${N:?}" &amp;&amp; ditto "$P" "$D/$N" &amp;&amp; xattr -dr com.apple.quarantine "$D/$N" &amp;&amp; open "$D/$N"; rm -rf "${T:?}"; fi)</code><button type="button" class="copy" data-copy="command-mac-downloaded">Copy</button></div>
-              <p>Quit Tachy-on Village first if it’s already open.</p>
+              <p>The app isn’t signed with a paid Apple developer account, so if you open the download directly, macOS says it “could not verify” Tachyon. Instead, leave the zip in your Downloads folder and paste this line into Terminal. It installs the app into Applications and opens it.</p>
+              <div class="command"><code id="command-mac-downloaded">(A=$([ "$(sysctl -n hw.optional.arm64 2&gt;/dev/null)" = 1 ] &amp;&amp; echo arm64 || echo x64); Z=$(ls -t ~/Downloads | grep -m1 -E "^(Tachy-on-Village|Tachyon)-mac-$A.*\.zip$"); if [ -z "$Z" ]; then echo "Tachyon for this Mac ($([ $A = x64 ] &amp;&amp; echo Intel || echo Apple silicon)) is not in your Downloads folder yet. Download it from the Green Scarf page first."; else D=/Applications; [ -w "$D" ] || { D=~/Applications; mkdir -p "$D"; }; T=$(mktemp -d); ditto -x -k ~/Downloads/"$Z" "$T" &amp;&amp; P=$(ls -d "$T"/*.app | head -1) &amp;&amp; N=$(basename "$P") &amp;&amp; rm -rf "${D:?}/${N:?}" &amp;&amp; ditto "$P" "$D/$N" &amp;&amp; xattr -dr com.apple.quarantine "$D/$N" &amp;&amp; open "$D/$N"; rm -rf "${T:?}"; fi)</code><button type="button" class="copy" data-copy="command-mac-downloaded">Copy</button></div>
+              <p>Quit Tachyon (or Tachy-on Village) first if it’s already open.</p>
             </div>
           </div>
 
@@ -283,12 +283,12 @@
               <li><strong>Paste this line and press <kbd>Enter</kbd>.</strong>
                 <div class="command"><code id="command-windows">irm https://github.com/OriolNuez/tachyon-website/releases/latest/download/install.ps1 | iex</code><button type="button" class="copy" data-copy="command-windows">Copy</button></div>
               </li>
-              <li><strong>That’s it.</strong> Open Tachy-on Village from the Start menu or your desktop. It installs for your user only, so no administrator rights are needed. Windows 10 or 11, 64-bit.</li>
+              <li><strong>That’s it.</strong> Open Tachyon from the Start menu or your desktop. It installs for your user only, so no administrator rights are needed. Windows 10 or 11, 64-bit.</li>
             </ol>
             <div class="alt-downloads">
               <h4>Or download it yourself</h4>
               <ul>
-                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachy-on-Village-Setup-windows-x64.exe">Windows installer (64-bit)</a> <span>EXE · 168 MB</span></li>
+                <li><a href="https://github.com/OriolNuez/tachyon-website/releases/latest/download/Tachyon-Setup-windows-x64.exe">Windows installer (64-bit)</a> <span>EXE · 192 MB</span></li>
               </ul>
               <p>Run the installer. It isn’t signed with a paid Microsoft certificate, so if SmartScreen appears, choose <strong>More info → Run anyway</strong>. The Windows version is new and has been tested on fewer computers than the Mac one.</p>
             </div>

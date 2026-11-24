@@ -22,9 +22,9 @@ The app is published as **releases of this repository**: <https://github.com/Ori
 
 | File | Used by |
 |---|---|
-| `Tachy-on-Village-mac-arm64.zip` | Apple silicon Macs |
-| `Tachy-on-Village-mac-x64.zip` | Intel Macs |
-| `Tachy-on-Village-Setup-windows-x64.exe` | Windows |
+| `Tachyon-mac-arm64.zip` | Apple silicon Macs |
+| `Tachyon-mac-x64.zip` | Intel Macs |
+| `Tachyon-Setup-windows-x64.exe` | Windows |
 | `install.sh` / `install.ps1` | the one-line install commands |
 | `SHA256SUMS.txt` | checksums the install commands verify |
 
@@ -46,7 +46,7 @@ irm https://github.com/OriolNuez/tachyon-website/releases/latest/download/instal
 - `assets/gentleman-*.webp` are animated WebPs built from the app's transparent gentleman sprites (intro, bike and hat tip), each with a `-still.webp` shown when reduced motion is on.
 - `assets/shot-*.webp` and `assets/step-contacts.webp` are real screenshots of the app with invented data only.
 - Motion: the opening line types out, the scarf ribbon draws in, and the gentleman animates. All of it stops when reduced motion is on.
-- The release files are still named `Tachy-on-Village-*` and the installed app still opens as Tachy-on Village until the next release; the page says so in the install section.
+- From 0.2.0 the release files are named `Tachyon-*` and the installed app opens as Tachyon; the page says so in the install section. Releases don't bundle IBM Bob Shell, so Ask Bob uses a copy already installed on the computer.
 - Screenshots should be reviewed carefully before publishing: screenshots or previews containing real company/customer/contact names should be replaced with **sanitised demo data**. Never publish real contact names, email addresses, phone numbers, client information, or campaign data without appropriate authorisation.
 
 ## Before launch checklist
